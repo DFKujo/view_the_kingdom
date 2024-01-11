@@ -35,7 +35,7 @@ section#selection label, section#selection select {
     font-size: 1.2em;
 }
 
-section#stats {
+section#stats, section#burn-totals, section#locked-totals {
     background: #f8f9fa;
     padding: 20px;
     margin-top: 20px;
@@ -43,17 +43,16 @@ section#stats {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-section#stats h3 {
+section#stats h3, section#burn-totals h3, section#locked-totals h3 {
     color: #4a69bd;
     font-size: 1.6em;
 }
 
-section#stats p {
+section#stats p, section#burn-totals div, section#locked-totals div {
     color: #555;
     font-size: 1.2em;
 }
 
-/* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .container {
         width: 95%;
