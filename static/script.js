@@ -1,3 +1,5 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', function() {
     window.updateCategory = function() {
         var category = document.getElementById('category-select').value;
@@ -21,14 +23,31 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchBlockchainData();
     }
 
-    function fetchBlockchainData() {
-        fetch('/get_balance')
-            .then(response => response.json())
-            .then(data => {
-                console.log('Harmony Burn Data:', data); // Debug log
-                document.getElementById('harmony-burn-amount').innerText = data.result || 'N/A';
-            })
-            .catch(error => console.error('Error:', error));
+function fetchBlockchainData() {
+    fetch('/get_balance')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Balance Data:', data); // Debug log
+
+            document.getElementById('harmony-burn-amount').innerText =
+                data.formattedHARM ? data.formattedHARM.toFixed(2) : 'N/A';
+
+            document.getElementById('dfkchain-burn-amount').innerText =
+                data.totalDFKJ ? data.totalDFKJ.toFixed(2) : 'N/A';
+
+            document.getElementById('klaytn-burn-amount').innerText =
+                data.formattedKLAY ? data.formattedKLAY.toFixed(2) : 'N/A';
+
+            document.getElementById('total-burn-amount').innerText =
+                data.totalBurn ? data.totalBurn.toFixed(2) : 'N/A';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('harmony-burn-amount').innerText = 'N/A';
+            document.getElementById('dfkchain-burn-amount').innerText = 'N/A';
+            document.getElementById('klaytn-burn-amount').innerText = 'N/A';
+            document.getElementById('total-burn-amount').innerText = 'N/A';
+        });
 
         fetch('/get_dfkc_amount')
             .then(response => response.json())
