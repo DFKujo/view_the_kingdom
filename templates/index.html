@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Armor & Accessories Tracker</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Armor & Accessories Tracker</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="selection">
+            <label for="category-select">Choose a category:</label>
+            <select id="category-select" onchange="updateCategory()">
+                <option value="bloater_suit">Bloater Suit Count</option>
+                <option value="karate_gi">Karate Gi Count</option>
+                <option value="bloater_head">Bloater Head Count</option>
+            </select>
+        </section>
+
+        <section id="stats">
+            <!-- Statistics will be displayed here with the following div IDs -->
+            <div id="bloater_suit_count"></div>
+            <div id="karate_gi_count"></div>
+            <div id="bloater_head_count"></div>
+        </section>
+
+        <section id="burn-totals">
+            <h3>Burn Totals</h3>
+            <div id="harmony-burn">Jewel on Harmony: <span id="harmony-burn-amount">Loading...</span></div>
+            <div id="dfkchain-burn">Jewel on DFKChain: <span id="dfkchain-burn-amount">Loading...</span></div>
+            <div id="klaytn-burn">Jewel on Klaytn: <span id="klaytn-burn-amount">Loading...</span></div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

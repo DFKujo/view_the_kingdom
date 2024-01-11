@@ -1,0 +1,61 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+header {
+    background: #4a69bd;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+section#selection {
+    text-align: center;
+    margin: 20px 0;
+}
+
+section#selection label, section#selection select {
+    margin: 5px;
+    font-size: 1.2em;
+}
+
+section#stats {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section#stats h3 {
+    color: #4a69bd;
+    font-size: 1.6em;
+}
+
+section#stats p {
+    color: #555;
+    font-size: 1.2em;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
